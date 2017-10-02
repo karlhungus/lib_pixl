@@ -54,7 +54,6 @@ func DisplayFile(image string) {
 
 func Display(img image.Image) {
 	Draw(img)
-	defer termbox.Close()
 
 	for {
 		switch ev := termbox.PollEvent(); ev.Type {
@@ -77,4 +76,8 @@ func Init() {
 		panic(err)
 	}
 	termbox.SetOutputMode(termbox.Output256)
+}
+
+func Close() {
+	termbox.Close()
 }

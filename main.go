@@ -13,6 +13,7 @@ func main() {
 	}
 
 	Init()
+	defer Close()
 	for i := 1; i < len(os.Args); i++ {
 		DisplayFile(os.Args[i])
 	}
